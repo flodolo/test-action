@@ -1,0 +1,14 @@
+name: Clone mozilla-central
+on:
+  workflow_dispatch:
+jobs:
+  clone:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install Mercurial
+        run: |
+          sudo apt update
+          sudo apt install mercurial
+      - name: Clone mozilla-central
+        run: |
+          hg clone https://hg.mozilla.org/mozilla-central/
